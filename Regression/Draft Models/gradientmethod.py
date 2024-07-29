@@ -6,6 +6,7 @@ import multiprocessing as mp
 model = lambda x,w,b : (w*x) + b
 
 #function to calculate cost of model
+
 def cost(x,y,w,b):
     if len(x) != len(y):
         raise Exception("Arrays must be same length")
@@ -65,6 +66,7 @@ def grad_descent(x,y,w,b,alpha):
     print(diff_b)
     return w,b,c
 
+#only one feature in this entire model!
 df = pd.read_csv("C:\\Users\\Micah Andrejczak\\Downloads\\archive\\train.csv")
 input_data = df["x"]
 target_data = df["y"]
@@ -72,10 +74,10 @@ x = input_data.to_numpy()
 y = target_data.to_numpy()
 
 #guesses
-w = 1
-b = -2
+w = 0
+b = 0
 alpha= 0.0001 #alpha value for gradient descent
-w,b,c = grad_descent(x,y,w,b,alpha)
+#w,b,c = grad_descent(x,y,w,b,alpha)
 w_sci = 1.000778257535692
 b_sci = -0.12015653187363284
 cost_sci = cost(x,y,w_sci,b_sci)
