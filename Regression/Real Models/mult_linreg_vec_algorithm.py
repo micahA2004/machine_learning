@@ -105,17 +105,17 @@ def gradient_descent(w, X, b, Y, learning_rate, iteration_num, interval):
 #alpha was found to be the fastest learning rate that doesn't allow divergence through testing
 alpha = 0.00025
 #modify either of these, higher iterations results in lower cost
-iterations = 100000
+iterations = 10000
 interval = 1000
 
 w,b,c = gradient_descent(w, X, b, Y, alpha, iterations, interval)
 
 #Quick function to make it easier to print out final model with proper coefficients
 def create_model_string(w, b):
-    
-    terms = [f"{w[i]}:.6f(x{i+1})" for i in range(len(w))]
+    terms = [f"{w[i]:.6f}(x{i+1})" for i in range(len(w))]
     terms_str = " + ".join(terms)
-    return f"{terms_str} + {b}"
+    return f"{terms_str} + {b:.6f}"
+
 
 #Prints the model rep
 model_str = create_model_string(w, b)
