@@ -84,6 +84,7 @@ y = [22, 23, 30, 19, 21]
 X = np.array([x1, x2, x3]).T  # Transposed to get the shape (5, 3)
 print("Feature matrix X:")
 print(X)
+print(X.T)
 print("\n")
 
 # Weights for each feature
