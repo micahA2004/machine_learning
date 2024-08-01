@@ -1,3 +1,21 @@
+"""
+Changes to make:
+    Dealing with features with discrete labels, or more efficient normalization
+    Speed
+        Data handling using pandas/numpy
+        Actual algorithm
+        Thinking of implementing non-negative matrix factorization to help with dataframe parsing
+    Usability/customizability
+        I want this script to be able to handle custom situations
+        Could write the predicted values to a new column in dataframe to assist evaluation in real testing cases
+    Readability
+        Overall cleaning up everything and making program more professional
+    
+    This program should work well with a multitude of datasets using gradient descent
+    for multiple linear regression w/ vectorization. Most significant modification a user
+    should need to make is how they pull in the training and testing data for model.
+"""
+
 ##deal with feature normalization
 
 import numpy as np
@@ -199,6 +217,6 @@ conclusion = f"This means that the percent accuracy of this model is {(100-perce
 
 print(testing_string + conclusion)
 
-
+#writes to a .txt file
 with open("execution_time_w_num_Iterations.txt", "a") as file:
     file.write(f"{t_sec}, {iterations}, {test_ratio}, {percent_err}\n")
